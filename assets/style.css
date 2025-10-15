@@ -18,7 +18,7 @@
 .container-login {
   display: flex;
   width: 900px;
-  height: 550px;
+  height: 600px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -42,22 +42,22 @@
 
 .logo-login {
   font-size: 1.6em;
-  font-weight: 700;
   margin-bottom: 90px;
   color: #000;
+  font-weight: bolder;
 }
 
 .h2-login {
   font-size: 1.5em;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .subtitle-login {
   font-size: 0.9em;
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -90,6 +90,7 @@ input:focus {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 0.85em;
 }
 
 .checkbox input {
@@ -100,6 +101,7 @@ a.forgot {
   color: #555;
   text-decoration: none;
   font-size: 0.85em;
+  margin-left: 10px;
 }
 
 a.forgot:hover {
