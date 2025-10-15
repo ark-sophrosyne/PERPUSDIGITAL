@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Bookify</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+  </head>
+  <body class="body-login">
+    <div class="container-login">
+      <div class="left-login">
+        <div class="form-box-login">
+          <h1 class="logo-login">Bookify</h1>
+          <h2 class="h2-login">Login</h2>
+          <p class="subtitle-login">
+            Welcome back! Enter your email/username and password below to sign
+            in.
+          </p>
+
+          <form action="login.php">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <label for="password">password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+
+            <div class="form-footer-login">
+              <label class="checkbox">
+                <input type="checkbox" name="remember" />Keep me logged in
+              </label>
+              <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            <button type="submit" class="button-login">Login</button>
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        <img src="..//assets/image/BookBackground.png" alt="BookBackground" />
+      </div>
+    </div>
+  </body>
+</html>
