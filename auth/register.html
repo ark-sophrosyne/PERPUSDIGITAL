@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookify-Register</title>
+    <link rel="stylesheet" href="../assets/styleregis.css" />
+    <link rel="stylesheet" href="../assets/mediaqueries.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="form-section">
+        <h1 class="logo">BOOKIFY</h1>
+        <h2 class="h2-regis">Register</h2>
+        <form action="register_process.php" method="POST" class="register-form">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email/username"
+            required
+          />
+
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" class="btn-register">Sign Up</button>
+        </form>
+        <p class="login-text">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </div>
+
+      <div class="image-section">
+        <img src="../assets/image/BookBackground.png" alt="Bookshelf" />
+      </div>
+    </div>
+  </body>
+</html>

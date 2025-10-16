@@ -1,0 +1,13 @@
+@media screen and (max-width: 1200px) {
+    .image-section{
+        display: none;
+    }
+
+    .container-login{
+        justify-content: center;
+    }
+
+    .left-login {
+        width: 100%;
+    }
+}

@@ -1,146 +1,281 @@
-/* LOGIN FORM */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-.body-login {
-  background: #f8f9fb;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  background-color: #f7f8fa;
+  color: #333;
 }
 
-.container-login {
+.dashboard {
   display: flex;
-  width: 900px;
-  height: 600px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
   background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-
-.left-login {
-  width: 50%;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 15px;
-}
-
-.form-box-login {
-  width: 100%;
-  max-width: 340px;
-}
-
-.logo-login {
-  font-size: 1.6em;
-  margin-bottom: 90px;
-  color: #000;
-  font-weight: bolder;
-}
-
-.h2-login {
-  font-size: 1.5em;
-  font-weight: 600;
-  margin-bottom: 20px;
+.logo-section {
   text-align: center;
 }
 
-.subtitle-login {
-  font-size: 0.9em;
-  color: #666;
-  margin-bottom: 40px;
-  text-align: center;
+.logo {
+  width: 70px;
+  margin-bottom: 10px;
 }
 
-.label-login {
-  font-size: 0.9em;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 5px;
-  color: #222;
+.role {
+  display: inline-block;
+  background: #eafbee;
+  color: #3b915f;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-size: 0.95em;
-  transition: border-color 0.3s;
+.role-admin {
+    background-color: #24a7ff4e;;
+    color: cornflowerblue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-left: 5px;
 }
 
-input:focus {
-  border-color: rgba(100, 119, 219, 1);
-  outline: none;
-}
-
-.form-footer-login {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  font-size: 0.85em;
-}
-
-.checkbox input {
+.role-member{
+  background: #dcffe3;
+  color: #3b915f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
   margin-right: 5px;
 }
 
-a.forgot {
-  color: #555;
+.menu {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
   text-decoration: none;
-  font-size: 0.85em;
-  margin-left: 10px;
-}
-
-a.forgot:hover {
-  text-decoration: underline;
-}
-
-.button-login {                                                 /*CHECK IF IT WORK HOVER*/
-  width: 100%;
-  padding: 12px;
-  background-color: rgba(100, 119, 219, 1);
-  border: none;
+  color: #333;
   border-radius: 8px;
+  transition: 0.2s;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: #e6ebff;
+  color: #4f63e3;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem 2rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4f63e3;
   color: white;
-  font-size: 1em;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.content {
+  margin-top: 1.5rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.subtitle {
+  color: #4f63e3;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: rgba(100, 119, 219, 1);
+.primary {
+  background: #4f63e3;
+  color: white;
 }
 
-
-.right-login {
-  width: 50%;
-  overflow: hidden;
-  border-left: 1px solid #eee;
+.secondary {
+  background: #e6ebff;
+  color: #4f63e3;
 }
 
-.right img {
+.filter,
+.search {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.data-table {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  margin-left: 34px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
 }
 
-button:hover {
-  background: linear-gradient(135deg, rgba(100, 119, 219, 1), #818cf8);
-  transform: translateY(-2px);
+.data-table th,
+.data-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.btn-detail {
+  background: #dcffe3;
+  color: #3b915f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.btn-delete {
+  background: #ffd7d7;
+  color: #b03b3b;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.btn-edit {
+    background-color: #24a7ff4e;;
+    color: cornflowerblue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-left: 5px;
+}
+
+.btn-pinjam {
+    background-color: #24a7ff4e;;
+    color: cornflowerblue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.btn-terlambat {
+  background: #ffd7d7;
+  color: #b03b3b;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.btn-belum-kembali {
+  background: #ffd7d7;
+  color: #b03b3b;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.btn-sudah-kembali {
+  background: #dcffe3;
+  color: #3b915f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.username {
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 0.8rem;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  min-width: 140px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #e6ebff;
+  color: #4f63e3;
+}
+
+.dropdown.active {
+  display: flex;
 }

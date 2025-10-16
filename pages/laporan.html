@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOKIFY Dashboard</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="logo-section">
+          <img
+            src="../assets/icon/Bookifylogo.jpg"
+            alt="Bookify Logo"
+            class="logo"
+          />
+          <h2>BOOKIFY</h2>
+        </div>
+
+        <nav class="menu">
+          <a href="data_buku.html" class="menu-item">
+            <img
+              src="../assets/icon/Databuku.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Data Buku
+          </a>
+          <a href="data_anggota.html" class="menu-item">
+            <img
+              src="../assets/icon/Dataanggotalogo.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Data Anggota
+          </a>
+          <a href="transaksi.html" class="menu-item">
+            <img
+              src="../assets/icon/Datatransaksi.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Transaksi
+          </a>
+          <a href="laporan.html" class="menu-item active">
+            <img
+              src="../assets/icon/laporan.png"
+              alt=""
+              width="55px"
+              height="50px"
+              style="margin-left: 6px"
+            />
+            Laporan
+          </a>
+        </nav>
+      </div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h1>Reports</h1>
+          <div class="user-menu">
+            <button id="userDropdownBtn" class="user-btn">
+              <img
+                src="../assets/icon/wolf king.png"
+                alt="User"
+                class="user-avatar"
+              />
+              <span class="arrow">▼</span>
+            </button>
+
+            <div id="userDropdown" class="dropdown">
+              <a href="#" class="dropdown-item">Profile</a>
+              <a href="../logout.php" class="dropdown-item">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <section class="content">
+          <h2 class="subtitle">Laporan</h2>
+          <div class="actions">
+            <button class="btn primary">New Report</button>
+            <button class="btn secondary">Export ▼</button>
+            <select class="filter">
+              <option>All Reports</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Search for reports"
+              class="search"
+            />
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>ID Buku</th>
+                <th>Nama Peminjam</th>
+                <th>Tanggal Pinjam</th>
+                <th>Tanggal Kembali</th>
+                <th>Jumlah</th>
+                <th>Denda</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2914440384</td>
+                <td>Ruslan Ismail</td>
+                <td>10/26/2022</td>
+                <td>10/29/2022</td>
+                <td>2</td>
+                <td>Rp. 3000</td>
+                <td>
+                  <button class="btn-terlambat">Terlambat</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>4013449971</td>
+                <td>Ahmad Abdullah</td>
+                <td>08/26/2022</td>
+                <td>08/16/2022</td>
+                <td>1</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-sudah-kembali">Sudah kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>0376094284</td>
+                <td>Surya Firdaus</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>3</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>4562457704</td>
+                <td>Ismail Sulaiman</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>2</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>1794000537</td>
+                <td>Rahman Mansur</td>
+                <td>10/26/2022</td>
+                <td>10/29/2022</td>
+                <td>2</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-sudah-kembali">Sudah kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>3554926113</td>
+                <td>Buana Ahmad</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>1</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>2766347307</td>
+                <td>Putri Melati</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>1</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>2392601775</td>
+                <td>Wira Cahya</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>2</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>2089068506</td>
+                <td>Mohamad Zakaria</td>
+                <td>05/09/2022</td>
+                <td>05/14/2022</td>
+                <td>1</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-sudah-kembali">Sudah kembali</button>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>9596795839</td>
+                <td>Putra Idris</td>
+                <td>10/26/2022</td>
+                <td>-</td>
+                <td>1</td>
+                <td>-</td>
+                <td>
+                  <button class="btn-belum-kembali">Belum kembali</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const dropdownBtn = document.getElementById("userDropdownBtn");
+      const dropdownMenu = document.getElementById("userDropdown");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (
+          !dropdownBtn.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
