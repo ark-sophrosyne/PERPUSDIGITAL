@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOKIFY Dashboard</title>
+    <link rel="stylesheet" href="../assets/styleindex.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="logo-section">
+          <img
+            src="../assets/icon/Bookifylogo.jpg"
+            alt="Bookify Logo"
+            class="logo"
+          />
+          <h2>BOOKIFY</h2>
+          <span class="role">Admin</span>
+        </div>
+
+        <nav class="menu">
+          <a href="#" class="menu-item active">
+            <img
+              src="../assets/icon/Databuku.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Data Buku
+          </a>
+          <a href="#" class="menu-item">
+            <img
+              src="../assets/icon/Dataanggotalogo.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Data Anggota
+          </a>
+          <a href="#" class="menu-item">
+            <img
+              src="../assets/icon/Datatransaksi.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Transaksi
+          </a>
+          <a href="#" class="menu-item">
+            <img
+              src="../assets/icon/laporan.png"
+              alt=""
+              width="55px"
+              height="50px"
+              style="margin-left: 6px"
+            />
+            Laporan
+          </a>
+        </nav>
+      </div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h1>Dashboard Admin</h1>
+
+          <div class="user-menu">
+            <button id="userDropdownBtn" class="user-btn">
+              <img
+                src="../assets/icon/wolf king.png"
+                alt="User"
+                class="user-avatar"
+              />
+              <span class="username">Admin</span>
+              <span class="arrow">▼</span>
+            </button>
+
+            <div id="userDropdown" class="dropdown">
+              <a href="#" class="dropdown-item">Profile</a>
+              <a href="../logout.php" class="dropdown-item">Logout</a>
+            </div>
+          </div>
+        </header>
+
+        <section class="content">
+          <h2 class="subtitle">Book List</h2>
+
+          <div class="actions">
+            <button class="btn primary">New Report</button>
+            <button class="btn secondary">Export ▼</button>
+            <select class="filter">
+              <option>All Reports</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Search for reports"
+              class="search"
+            />
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Stok</th>
+                <th>Penulis</th>
+                <th>Penerbit</th>
+                <th>Created At</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Matematika Dasar</td>
+                <td>4</td>
+                <td>1 Juni 2024</td>
+                <td>15 Juni 2024</td>
+                <td>15 Juni 2024</td>
+                <td>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Sejarah Indonesia</td>
+                <td>1</td>
+                <td>3 Juni 2024</td>
+                <td>17 Juni 2024</td>
+                <td>15 Juni 2024</td>
+                <td>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Kimia untuk SMA</td>
+                <td>3</td>
+                <td>5 Juni 2024</td>
+                <td>21 Juni 2024</td>
+                <td>15 Juni 2024</td>
+                <td>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const dropdownBtn = document.getElementById("userDropdownBtn");
+      const dropdownMenu = document.getElementById("userDropdown");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (
+          !dropdownBtn.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
