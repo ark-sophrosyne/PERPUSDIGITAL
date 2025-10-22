@@ -192,6 +192,14 @@ body {
     border-radius: 6px;
 }
 
+.btn-kembalikan {
+  background: #dcffe3;
+  color: #3b915f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
 .btn-terlambat {
   background: #ffd7d7;
   color: #b03b3b;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKIFY Dashboard</title>
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/responsive.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -19,7 +20,7 @@
         </div>
 
         <nav class="menu">
-          <a href="data_buku.html" class="menu-item">
+          <a href="../index-member.html" class="menu-item">
             <img
               src="../assets/icon/Databuku.png"
               alt=""
@@ -82,16 +83,12 @@
         <section class="content">
           <h2 class="subtitle">Peminjaman Dan Pengembalin</h2>
           <div class="actions">
-            <button class="btn primary">New Report</button>
-            <button class="btn secondary">Export ▼</button>
             <select class="filter">
-              <option>All Reports</option>
+              <option selected>By date</option>
+              <option>Latest</option>
+              <option>Last</option>
             </select>
-            <input
-              type="text"
-              placeholder="Search for reports"
-              class="search"
-            />
+            <input type="text" placeholder="Search for person" class="search" />
           </div>
 
           <table class="data-table">

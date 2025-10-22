@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKIFY Dashboard</title>
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -16,10 +17,11 @@
             class="logo"
           />
           <h2>BOOKIFY</h2>
+          <span class="role">Admin</span>
         </div>
 
         <nav class="menu">
-          <a href="data_buku.html" class="menu-item active">
+          <a href="../index-admin.html" class="menu-item">
             <img
               src="../assets/icon/Databuku.png"
               alt=""
@@ -28,7 +30,7 @@
             />
             Data Buku
           </a>
-          <a href="data_anggota.html" class="menu-item">
+          <a href="data_anggota_admin.html" class="menu-item">
             <img
               src="../assets/icon/Dataanggotalogo.png"
               alt=""
@@ -37,7 +39,7 @@
             />
             Data Anggota
           </a>
-          <a href="transaksi.html" class="menu-item">
+          <a href="transaksi_admin.html" class="menu-item active">
             <img
               src="../assets/icon/Datatransaksi.png"
               alt=""
@@ -46,7 +48,7 @@
             />
             Transaksi
           </a>
-          <a href="laporan.html" class="menu-item">
+          <a href="laporan_admin.html" class="menu-item">
             <img
               src="../assets/icon/laporan.png"
               alt=""
@@ -61,7 +63,7 @@
 
       <main class="main-content">
         <header class="topbar">
-          <h1>Books</h1>
+          <h1>Borrow And Return</h1>
           <div class="user-menu">
             <button id="userDropdownBtn" class="user-btn">
               <img
@@ -69,6 +71,7 @@
                 alt="User"
                 class="user-avatar"
               />
+              <span class="username">Admin</span>
               <span class="arrow">▼</span>
             </button>
 
@@ -80,18 +83,16 @@
         </header>
 
         <section class="content">
-          <h2 class="subtitle">Buku</h2>
+          <h2 class="subtitle">Peminjaman Dan Pengembalin</h2>
           <div class="actions">
-            <button class="btn primary">New Report</button>
-            <button class="btn secondary">Export ▼</button>
+            <button class="btn primary">Update</button>
+            <button class="btn secondary" id="Download">Download</button>
             <select class="filter">
-              <option>All Reports</option>
+              <option selected>By date</option>
+              <option>Latest</option>
+              <option>Last</option>
             </select>
-            <input
-              type="text"
-              placeholder="Search for reports"
-              class="search"
-            />
+            <input type="text" placeholder="Search for person" class="search" />
           </div>
 
           <table class="data-table">
@@ -99,61 +100,47 @@
               <tr>
                 <th>No</th>
                 <th>Judul Buku</th>
-                <th>Stok tersedia</th>
-                <th>Stok idea</th>
-                <th>Selisih</th>
+                <th>Nama Peminjam</th>
+                <th>Tanggal Peminjaman</th>
+                <th>Tanggal Pengembalian</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Matematika X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
+                <td>Belajar Matematika Dasar</td>
+                <td>Ahmad Putra</td>
+                <td>1 Juni 2024</td>
+                <td>15 Juni 2024</td>
                 <td>
-                  <button class="btn-pinjam">Pinjam</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Bahasa inggris X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
+                <td>Sejarah Indonesia Modern</td>
+                <td>Budi Santoso</td>
+                <td>3 Juni 2024</td>
+                <td>17 Juni 2024</td>
                 <td>
-                  <button class="btn-pinjam">Pinjam</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>PKN X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
+                <td>Kimia untuk SMA</td>
+                <td>Citra Dewi</td>
+                <td>5 Juni 2024</td>
+                <td>21 Juni 2024</td>
                 <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Ipas X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Mulok X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
             </tbody>
@@ -178,6 +165,36 @@
           dropdownMenu.classList.remove("active");
         }
       });
+
+      document
+        .getElementById("Download")
+        .addEventListener("click", function () {
+          const table = document.querySelector(".data-table");
+          if (!table) {
+            alert("Tidak ada tabel untuk diunduh!");
+            return;
+          }
+          let csv = [];
+          const rows = table.querySelectorAll("tr");
+          rows.forEach((row) => {
+            const cols = row.querySelectorAll("th, td");
+            const rowData = [];
+            cols.forEach((col) => {
+              let text = col.innerText.replace(/"/g, '""');
+              rowData.push(`"${text}"`);
+            });
+            csv.push(rowData.join(","));
+          });
+          const csvContent = csv.join("\n");
+          const blob = new Blob([csvContent], { type: "text/csv" });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "data_transaksi.csv";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
     </script>
   </body>
 </html>

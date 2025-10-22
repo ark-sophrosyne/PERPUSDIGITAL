@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKIFY Dashboard</title>
     <link rel="stylesheet" href="../assets/style.css" />
-    <link rel="stylesheet" href="../assets/responsive.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -17,10 +17,11 @@
             class="logo"
           />
           <h2>BOOKIFY</h2>
+          <span class="role">Admin</span>
         </div>
 
         <nav class="menu">
-          <a href="../index-member.html" class="menu-item">
+          <a href="#" class="menu-item active">
             <img
               src="../assets/icon/Databuku.png"
               alt=""
@@ -29,7 +30,7 @@
             />
             Data Buku
           </a>
-          <a href="data_anggota.html" class="menu-item active">
+          <a href="pages_admin/data_anggota_admin.html" class="menu-item">
             <img
               src="../assets/icon/Dataanggotalogo.png"
               alt=""
@@ -38,7 +39,7 @@
             />
             Data Anggota
           </a>
-          <a href="transaksi.html" class="menu-item">
+          <a href="pages_admin/transaksi_admin.html" class="menu-item">
             <img
               src="../assets/icon/Datatransaksi.png"
               alt=""
@@ -47,7 +48,7 @@
             />
             Transaksi
           </a>
-          <a href="laporan.html" class="menu-item">
+          <a href="pages_admin/laporan_admin.html" class="menu-item">
             <img
               src="../assets/icon/laporan.png"
               alt=""
@@ -62,7 +63,8 @@
 
       <main class="main-content">
         <header class="topbar">
-          <h1>Members</h1>
+          <h1>Dashboard Admin</h1>
+
           <div class="user-menu">
             <button id="userDropdownBtn" class="user-btn">
               <img
@@ -70,6 +72,7 @@
                 alt="User"
                 class="user-avatar"
               />
+              <span class="username">Admin</span>
               <span class="arrow">▼</span>
             </button>
 
@@ -81,77 +84,74 @@
         </header>
 
         <section class="content">
-          <h2 class="subtitle">Anggota</h2>
+          <h2 class="subtitle">Book List</h2>
+
           <div class="actions">
+            <button class="btn primary">Update</button>
+            <button class="btn secondary" id="Download">Download</button>
             <select class="filter">
-              <option selected>Kelas</option>
-              <option>XII</option>
-              <option>XI</option>
-              <option>X</option>
+              <option selected>By Stock</option>
+              <option>Least</option>
+              <option>Most</option>
             </select>
-            <input type="text" placeholder="Search for person" class="search" />
+
+            <input
+              type="text"
+              placeholder="Search for reports"
+              class="search"
+            />
           </div>
 
           <table class="data-table">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Nama Anggota</th>
-                <th>Kelas</th>
-                <th>Alamat</th>
-                <th>No Telepon</th>
-                <th>Role</th>
+                <th>Judul Buku</th>
+                <th>Stok</th>
+                <th>Penulis</th>
+                <th>Penerbit</th>
+                <th>Created At</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Ahmad Putra</td>
-                <td>X IPA 1</td>
-                <td>Jl. Merpati No. 10, Jakarta</td>
-                <td>081234567890</td>
+                <td>Matematika Dasar</td>
+                <td>4</td>
+                <td>1 Juni 2024</td>
+                <td>15 Juni 2024</td>
+                <td>15 Juni 2024</td>
                 <td>
-                  <button class="role-admin">Admin</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Budi Santoso</td>
-                <td>XI IPS 2</td>
-                <td>Jl. Kenanga No. 22, Bandung</td>
-                <td>082345678901</td>
+                <td>Sejarah Indonesia</td>
+                <td>1</td>
+                <td>3 Juni 2024</td>
+                <td>17 Juni 2024</td>
+                <td>15 Juni 2024</td>
                 <td>
-                  <button class="role-member">Member</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>Citra Dewi</td>
-                <td>XII IPA 3</td>
-                <td>Jl. Melati No. 15, Surabaya</td>
-                <td>083456789012</td>
+                <td>Kimia untuk SMA</td>
+                <td>3</td>
+                <td>5 Juni 2024</td>
+                <td>21 Juni 2024</td>
+                <td>15 Juni 2024</td>
                 <td>
-                  <button class="role-member">Member</button>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Diana Kartika</td>
-                <td>X IPS 1</td>
-                <td>Jl. Anggrek No. 5, Yogyakarta</td>
-                <td>084567890123</td>
-                <td>
-                  <button class="role-member">Member</button>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Eko Prasetyo</td>
-                <td>X IPS 1</td>
-                <td>Jl. Mawar No. 8, Semarang</td>
-                <td>085678901234</td>
-                <td>
-                  <button class="role-member">Member</button>
+                  <button class="btn-detail">Detail</button>
+                  <button class="btn-delete">Delete</button>
+                  <button class="btn-edit">Edit</button>
                 </td>
               </tr>
             </tbody>
@@ -176,6 +176,36 @@
           dropdownMenu.classList.remove("active");
         }
       });
+
+      document
+        .getElementById("Download")
+        .addEventListener("click", function () {
+          const table = document.querySelector(".data-table");
+          if (!table) {
+            alert("Tidak ada tabel untuk diunduh!");
+            return;
+          }
+          let csv = [];
+          const rows = table.querySelectorAll("tr");
+          rows.forEach((row) => {
+            const cols = row.querySelectorAll("th, td");
+            const rowData = [];
+            cols.forEach((col) => {
+              let text = col.innerText.replace(/"/g, '""');
+              rowData.push(`"${text}"`);
+            });
+            csv.push(rowData.join(","));
+          });
+          const csvContent = csv.join("\n");
+          const blob = new Blob([csvContent], { type: "text/csv" });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "data_buku.csv";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
     </script>
   </body>
 </html>
