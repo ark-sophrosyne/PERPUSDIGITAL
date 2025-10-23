@@ -76,7 +76,9 @@
             </button>
 
             <div id="userDropdown" class="dropdown">
-              <a href="#" class="dropdown-item">Profile</a>
+              <a href="profile.html" class="dropdown-item" target="_blank"
+                >Profile</a
+              >
               <a href="../logout.php" class="dropdown-item">Logout</a>
             </div>
           </div>
@@ -85,7 +87,13 @@
         <section class="content">
           <h2 class="subtitle">Anggota</h2>
           <div class="actions">
-            <button class="btn primary">Update</button>
+            <button
+              class="btn primary"
+              onclick="location.reload()"
+              id="updateBtn"
+            >
+              Update
+            </button>
             <button class="btn secondary" id="Download">Download</button>
             <select class="filter">
               <option selected>Kelas</option>
@@ -235,6 +243,26 @@
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
+        });
+
+      let editing = false;
+      document
+        .getElementById("updateBtn")
+        .addEventListener("click", function () {
+          const table = document.querySelector(".data-table");
+
+          if (!editing) {
+            table.contentEditable = "true";
+            this.textContent = "Save";
+            editing = true;
+          } else {
+            table.contentEditable = "false";
+            this.textContent = "Update";
+            alert(
+              "Changes saved! (You can later send this to database via PHP)"
+            );
+            editing = false;
+          }
         });
     </script>
   </body>

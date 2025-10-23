@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOKIFY | Profile</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f9fafc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .profile-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .profile-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid #4b6bfb;
+      }
+
+      .profile-card h2 {
+        margin-bottom: 5px;
+      }
+
+      .profile-card p {
+        color: gray;
+        font-size: 14px;
+      }
+
+      .profile-form {
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .profile-form label {
+        display: block;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .profile-form input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-top: 5px;
+      }
+
+      .btn-save {
+        margin-top: 20px;
+        width: 100%;
+        background: #4b6bfb;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn-save:hover {
+        background: #3b5de0;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #4b6bfb;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img id="profileImage" src="../assets/icon/wolf king.png" alt="Profile" />
+      <h2 id="displayName">Admin</h2>
+      <p>admin@bookify.com</p>
+
+      <form class="profile-form" id="profileForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" value="Admin" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" value="admin@bookify.com" />
+
+        <label for="photo">Change Profile Picture</label>
+        <input type="file" id="photo" accept="image/*" />
+
+        <button type="submit" class="btn-save">Save Changes</button>
+      </form>
+
+      <a href="../index-admin.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <script>
+      document.getElementById("photo").addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            document.getElementById("profileImage").src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      document.getElementById("profileForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        document.getElementById("displayName").textContent = name;
+        alert("Profile updated successfully!");
+      });
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKIFY Dashboard</title>
     <link rel="stylesheet" href="../assets/style.css" />
-    <link rel="stylesheet" href="../assets/responsive.css">
+    <link rel="stylesheet" href="../assets/responsive.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -74,7 +74,12 @@
             </button>
 
             <div id="userDropdown" class="dropdown">
-              <a href="#" class="dropdown-item">Profile</a>
+              <a
+                href="profile-member.html"
+                class="dropdown-item"
+                target="_blank"
+                >Profile</a
+              >
               <a href="../logout.php" class="dropdown-item">Logout</a>
             </div>
           </div>
@@ -89,11 +94,7 @@
               <option>Belum kembali</option>
               <option>Sudah kembali</option>
             </select>
-            <input
-              type="text"
-              placeholder="Search for person"
-              class="search"
-            />
+            <input type="text" placeholder="Search for person" class="search" />
           </div>
 
           <table class="data-table">
