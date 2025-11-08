@@ -38,15 +38,7 @@
             />
             Data Anggota
           </a>
-          <a href="transaksi.html" class="menu-item active">
-            <img
-              src="../assets/icon/Datatransaksi.png"
-              alt=""
-              width="65px"
-              height="60px"
-            />
-            Transaksi
-          </a>
+
           <a href="laporan.html" class="menu-item">
             <img
               src="../assets/icon/laporan.png"
@@ -57,12 +49,33 @@
             />
             Laporan
           </a>
+
+          <a href="kembalikan.html" class="menu-item">
+            <img
+              src="../assets/icon/Datatransaksi.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Pengembalian
+          </a>
+
+          <a href="pinjam.html" class="menu-item active">
+            <img
+              src="../assets/icon/book.png"
+              alt=""
+              width="55px"
+              height="50px"
+              style="margin-left: 6px"
+            />
+            Peminjaman
+          </a>
         </nav>
       </div>
 
       <main class="main-content">
         <header class="topbar">
-          <h1>Borrow And Return</h1>
+          <h1>Members</h1>
           <div class="user-menu">
             <button id="userDropdownBtn" class="user-btn">
               <img
@@ -81,17 +94,19 @@
                 >Profile</a
               >
               <a href="../logout.php" class="dropdown-item">Logout</a>
+              <a href="" class="dropdown-item" target="_blank">Details</a>
             </div>
           </div>
         </header>
 
         <section class="content">
-          <h2 class="subtitle">Peminjaman Dan Pengembalin</h2>
+          <h2 class="subtitle">Anggota</h2>
           <div class="actions">
             <select class="filter">
-              <option selected>By date</option>
-              <option>Latest</option>
-              <option>Last</option>
+              <option selected>Kelas</option>
+              <option>XII</option>
+              <option>XI</option>
+              <option>X</option>
             </select>
             <input type="text" placeholder="Search for person" class="search" />
           </div>
@@ -101,32 +116,77 @@
               <tr>
                 <th>No</th>
                 <th>Judul Buku</th>
-                <th>Nama Peminjam</th>
-                <th>Tanggal Peminjaman</th>
-                <th>Tanggal Pengembalian</th>
+                <th>Gambar</th>
+                <th>kode inventaris</th>
+                <th>Kategori</th>
+                <th>Penulis</th>
+                <th>Penerbit</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Belajar Matematika Dasar</td>
-                <td>Ahmad Putra</td>
-                <td>1 Juni 2024</td>
-                <td>15 Juni 2024</td>
+                <td>Matematika Dasar</td>
+                <td>
+                  <img
+                    src="../assets/icon/book.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </td>
+                <td>424452342435</td>
+                <td>Pelajaran Umum</td>
+                <td>hanif A.M</td>
+                <td>Erlangga</td>
+                <td>
+                  <a href="pages/pinjam.html"
+                    ><button class="btn-pinjam">Pinjam</button></a
+                  >
+                </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Sejarah Indonesia Modern</td>
-                <td>Budi Santoso</td>
-                <td>3 Juni 2024</td>
-                <td>17 Juni 2024</td>
+                <td>Sejarah Indonesia</td>
+                <td>
+                  <img
+                    src="../assets/icon/book.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </td>
+                <td>35464635343</td>
+                <td>Pelajaran Umum</td>
+                <td>Panji aldiansyah</td>
+                <td>Agung jaya</td>
+                <td>
+                  <a href="../pages/pinjam.html"
+                    ><button class="btn-pinjam">Pinjam</button></a
+                  >
+                </td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>Kimia untuk SMA</td>
-                <td>Citra Dewi</td>
-                <td>5 Juni 2024</td>
-                <td>21 Juni 2024</td>
+                <td>Kimia</td>
+                <td>
+                  <img
+                    src="../assets/icon/book.png"
+                    alt=""
+                    width="50"
+                    height="50"
+                  />
+                </td>
+                <td>832463243426</td>
+                <td>Pelajaran Umum</td>
+                <td>Rafi najib muhana</td>
+                <td>Pegasus abadi</td>
+                <td>
+                  <a href="../pages/pinjam.html"
+                    ><button class="btn-pinjam">Pinjam</button></a
+                  >
+                </td>
               </tr>
             </tbody>
           </table>

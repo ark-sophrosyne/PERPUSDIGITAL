@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKIFY Dashboard</title>
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -37,15 +38,7 @@
             />
             Data Anggota
           </a>
-          <a href="pages/transaksi.html" class="menu-item">
-            <img
-              src="../assets/icon/Datatransaksi.png"
-              alt=""
-              width="65px"
-              height="60px"
-            />
-            Transaksi
-          </a>
+
           <a href="pages/laporan.html" class="menu-item">
             <img
               src="../assets/icon/laporan.png"
@@ -56,12 +49,34 @@
             />
             Laporan
           </a>
+
+          <a href="pages/kembalikan.html" class="menu-item">
+            <img
+              src="../assets/icon/Datatransaksi.png"
+              alt=""
+              width="65px"
+              height="60px"
+            />
+            Pengembalian
+          </a>
+
+          <a href="pages/pinjam.html" class="menu-item">
+            <img
+              src="assets/icon/book.png"
+              alt=""
+              width="55px"
+              height="50px"
+              style="margin-left: 6px"
+            />
+            Peminjaman
+          </a>
         </nav>
       </div>
 
       <main class="main-content">
         <header class="topbar">
-          <h1>Books</h1>
+          <h1>Members</h1>
+
           <div class="user-menu">
             <button id="userDropdownBtn" class="user-btn">
               <img
@@ -69,6 +84,7 @@
                 alt="User"
                 class="user-avatar"
               />
+              <span class="username">Admin</span>
               <span class="arrow">▼</span>
             </button>
 
@@ -79,92 +95,130 @@
                 target="_blank"
                 >Profile</a
               >
+
               <a href="../logout.php" class="dropdown-item">Logout</a>
+              <a href="" class="dropdown-item" target="_blank">Details</a>
             </div>
           </div>
         </header>
 
         <section class="content">
-          <h2 class="subtitle">Buku</h2>
+          <h2 class="subtitle">Book List</h2>
+
           <div class="actions">
             <select class="filter">
-              <option selected>Kelas</option>
-              <option>XII</option>
-              <option>XI</option>
-              <option>X</option>
+              <option selected>Kategori</option>
+              <option>Pelajaran umum</option>
+              <option>Pelajaran umum</option>
             </select>
-            <input type="text" placeholder="Search for books" class="search" />
+
+            <input
+              type="text"
+              placeholder="Search for reports"
+              class="search"
+            />
           </div>
 
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Judul Buku</th>
-                <th>Stok tersedia</th>
-                <th>Stok ideal</th>
-                <th>Selisih</th>
-                <th>Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Matematika X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                  <button class="btn-kembalikan">Kembalikan</button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Bahasa inggris X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                  <button class="btn-kembalikan">Kembalikan</button>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>PKN X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                  <button class="btn-kembalikan">Kembalikan</button>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Ipas X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                  <button class="btn-kembalikan">Kembalikan</button>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Mulok X</td>
-                <td>80</td>
-                <td>150</td>
-                <td>70</td>
-                <td>
-                  <button class="btn-pinjam">Pinjam</button>
-                  <button class="btn-kembalikan">Kembalikan</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="wrap">
+            <div class="grid">
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+              <div class="card">
+                <img />
+                <div class="title"></div>
+                <div class="meta">Penulis:</div>
+                <div class="meta">Penerbit:</div>
+                <div class="stok ok">Stok tersedia:</div>
+                <form action="./pinjam/create.php" method="get">
+                  <input type="hidden" name="id_buku" value="" />
+                  <div class="stok habis">Stok terpinjam:</div>
+                  <button type="submit" class="btn-pinjam1">Pinjam</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </div>
@@ -185,6 +239,64 @@
           dropdownMenu.classList.remove("active");
         }
       });
+
+      document
+        .getElementById("Download")
+        .addEventListener("click", function () {
+          const table = document.querySelector(".data-table");
+          if (!table) {
+            alert("Tidak ada tabel untuk diunduh!");
+            return;
+          }
+          let csv = [];
+          const rows = table.querySelectorAll("tr");
+          rows.forEach((row) => {
+            const cols = row.querySelectorAll("th, td");
+            const rowData = [];
+            cols.forEach((col) => {
+              let text = col.innerText.replace(/"/g, '""');
+              rowData.push(`"${text}"`);
+            });
+            csv.push(rowData.join(","));
+          });
+          const csvContent = csv.join("\n");
+          const blob = new Blob([csvContent], { type: "text/csv" });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "data_buku.csv";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
+
+      let editing = false;
+      document
+        .getElementById("updateBtn")
+        .addEventListener("click", function () {
+          const table = document.querySelector(".data-table");
+
+          if (!editing) {
+            table.contentEditable = "true";
+            this.textContent = "Save";
+            editing = true;
+          } else {
+            table.contentEditable = "false";
+            this.textContent = "Update";
+            alert(
+              "Changes saved! (You can later send this to database via PHP)"
+            );
+            7;
+            editing = false;
+          }
+        });
+
+      const savedImage = localStorage.getItem("uploadedBookCover");
+      if (savedImage) {
+        const img = document.getElementById("bookCoverPreview");
+        img.src = savedImage;
+        localStorage.removeItem("uploadedBookCover");
+      }
     </script>
   </body>
 </html>
